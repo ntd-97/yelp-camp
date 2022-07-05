@@ -1,0 +1,52 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row mt-5 mb-5">
+        <div class="col-md-6 offset-md-3 col-xl-6 offset-xl-3">
+            <div class="card customCard shadow">
+                <h2 class="text-center card-title mt-3">Creating campground</h2>
+                <div class="card-body">
+                    <form class="validated-form" action="/campgrounds" method="POST" enctype="multipart/form-data" novalidate>
+                        <div class="mb-3 position-relative">
+                            <label for="cgTitle" class="form-label">Title:</label>
+                            <input type="text" class="form-control" name="campground[title]" id="cgTitle" placeholder="campground title" autofocus required>
+                            <div class="invalid-tooltip customTooltip">
+                                Title is required.
+                            </div>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="cgLocation">Location:</label>
+                            <input type="text" class="form-control" name="campground[location]" id="cgLocation" placeholder="campground location" required>
+                            <div class="invalid-tooltip customTooltip">
+                                Location is required.
+                            </div>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="cgImage" class="form-label">Image:</label>
+                            <input type="file" class="form-control" name="images" id="cgImage" multiple required>
+                            <div class="invalid-tooltip customTooltip">
+                                Image is required.
+                            </div>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="cgPrice" class="form-label">Price:</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="cgPrice">$</span>
+                                <input type="number" min='0' oninput="validity.valid||(value='');" class="form-control" name="campground[price]" placeholder="0.00" aria-label="price" aria-describedby="cgPrice" required>
+                                <div class="invalid-tooltip customTooltip">
+                                    Price is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="cgDescription" class="form-label">Description:</label>
+                            <textarea class="form-control" id="cgDescription" name="campground[description]" rows="3" required></textarea>
+                            <div class="invalid-tooltip  customTooltip">
+                                Description is required.
+                            </div>
+                        </div>
+                        <button class="btn customBtn w-100 btn-success">Add Campground</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>

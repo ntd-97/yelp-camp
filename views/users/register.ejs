@@ -1,0 +1,42 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <div class="col-md-6 offset-md-3 col-xl-6 offset-xl-3">
+            <div class="card shadow customCard mt-5">
+                <h2 class="text-center card-title mt-3">Register</h2>
+                <div class="card-body">
+                    <form action="/register" method="POST" class="validated-form" novalidate>
+                        <div class="mb-3 position-relative">
+                            <label for="username" class="form-label">User name:</label>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="user name" autofocus required>
+                            <div class="invalid-tooltip customTooltip">
+                                User name is required.
+                            </div>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="password" class="form-label">Password:</label>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="password" required>
+                            <div class="invalid-tooltip customTooltip">
+                                Password is required.
+                            </div>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="email" required>
+                            <div class="invalid-tooltip customTooltip">
+                                Email is required.
+                            </div>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="phoneNumber" class="form-label">Phone number:</label>
+                            <input type="number" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="phone number" required>
+                            <div class="invalid-tooltip customTooltip">
+                                Phone number is required.
+                            </div>
+                        </div>
+                        <button class="btn btn-success customBtn w-100">Register</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
